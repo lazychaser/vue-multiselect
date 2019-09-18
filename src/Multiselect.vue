@@ -97,8 +97,8 @@
           :style="{ maxHeight: optimizedHeight + 'px' }"
           ref="list"
         >
+          <slot name="beforeList"></slot>
           <ul class="multiselect__content" :style="contentStyle" role="listbox" :id="'listbox-'+id">
-            <slot name="beforeList"></slot>
             <li v-if="multiple && max === internalValue.length">
               <span class="multiselect__option">
                 <slot name="maxElements">Maximum of {{ max }} options selected. First remove a selected option to select another.</slot>
@@ -147,8 +147,8 @@
                 <slot name="noOptions">List is empty.</slot>
               </span>
             </li>
-            <slot name="afterList"></slot>
           </ul>
+          <slot name="afterList"></slot>
         </div>
       </transition>
   </div>
