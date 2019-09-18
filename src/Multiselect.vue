@@ -52,7 +52,7 @@
           type="text"
           autocomplete="off"
           spellcheck="false"
-          :placeholder="placeholder"
+          :placeholder="searchPlaceholder"
           :style="inputStyle"
           :value="search"
           :disabled="disabled"
@@ -293,7 +293,11 @@ export default {
     tabindex: {
       type: Number,
       default: 0
-    }
+    },
+    searchPlaceholder: {
+      type: String,
+      default: 'Search',
+    },
   },
   computed: {
     isSingleLabelVisible () {
