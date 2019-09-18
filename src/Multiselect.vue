@@ -137,17 +137,13 @@
                 </span>
               </li>
             </template>
-            <li v-show="showNoResults && (filteredOptions.length === 0 && search && !loading)">
-              <span class="multiselect__option">
-                <slot name="noResult" :search="search">No elements found. Consider changing the search query.</slot>
-              </span>
-            </li>
-            <li v-show="showNoOptions && (options.length === 0 && !search && !loading)">
-              <span class="multiselect__option">
-                <slot name="noOptions">List is empty.</slot>
-              </span>
-            </li>
           </ul>
+          <div v-show="showNoResults && (filteredOptions.length === 0 && search && !loading)" class="multiselect__message">
+            <slot name="noResult" :search="search">No elements found. Consider changing the search query.</slot>
+          </div>
+          <div v-show="showNoOptions && (options.length === 0 && !search && !loading)" class="multiselect__message">
+            <slot name="noOptions">List is empty.</slot>
+          </div>
           <slot name="afterList"></slot>
         </div>
       </transition>
