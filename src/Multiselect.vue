@@ -296,8 +296,8 @@ export default {
     },
     searchPlaceholder: {
       type: String,
-      default: 'Search',
-    },
+      default: 'Search'
+    }
   },
   computed: {
     isSingleLabelVisible () {
